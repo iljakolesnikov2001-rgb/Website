@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ваша Логистика в Латвии</title>
+    <title>Mamo Logistics</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hamburger и drawer -->
-    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="hamburger" id="hamburger">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+    </div>
+
     <div class="drawer" id="drawer">
         <span class="close-drawer" id="closeDrawer">&times;</span>
-        <h3>Меню</h3>
         <ul>
             <li><a href="#">Главная</a></li>
+            <li><a href="#">О компании</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Направления</a></li>
-            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
             <li><a href="#" id="clientLoginBtn">Вход для заказчиков</a></li>
             <li><a href="#" id="staffLoginBtn">Вход для сотрудников</a></li>
-            <li><a href="#">Контакты</a></li>
         </ul>
     </div>
 
     <header>
         <h1>Надёжные автоперевозки по Европе</h1>
         <p>Из Латвии — быстро, безопасно, выгодно</p>
-    </header>
-
-    <nav>
         <button id="openModalBtn">Получить расчёт за 5 минут</button>
-    </nav>
+    </header>
 
     <main>
         <section>
             <h2>Наши услуги</h2>
-            <ul>
+            <ul class="services">
                 <li>Полные машины (FTL) и сборные грузы (LTL)</li>
                 <li>Экспресс-доставка по ЕС и Латвии</li>
                 <li>Склад в Риге: хранение, комплектация, кросс-докинг</li>
@@ -52,57 +54,26 @@
     </main>
 
     <footer>
-        <p>© 2026 Ваша Логистика в Латвии. Рига.</p>
+        <p>© 2026 Mamo Logistics. Рига, Латвия</p>
     </footer>
 
-    <!-- Модалка расчёта (как раньше) -->
+    <!-- Модалка заявки -->
     <div id="calcModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Заявка на перевозку</h2>
-            <form action="#" method="post">
+            <form>
                 <label>Компания / ФИО *</label>
                 <input type="text" required>
                 <label>Груз (тип, описание) *</label>
                 <textarea rows="3" required></textarea>
                 <label>Паллеты / кг *</label>
-                <input type="text" placeholder="Напр. 12 паллет / 8500 кг" required>
+                <input type="text" placeholder="12 паллет / 8500 кг" required>
                 <label>Откуда → Куда</label>
                 <input type="text" placeholder="Рига → Берлин">
                 <label>Телефон / Email *</label>
                 <input type="text" required>
                 <button type="submit">Отправить</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Модалка входа для заказчиков -->
-    <div id="clientLoginModal" class="modal">
-        <div class="modal-content">
-            <span class="close-client">&times;</span>
-            <h2>Вход для заказчиков</h2>
-            <form>
-                <label>Email / Логин</label>
-                <input type="email" required>
-                <label>Пароль</label>
-                <input type="password" required>
-                <button type="submit">Войти</button>
-                <p><a href="#">Забыли пароль?</a></p>
-            </form>
-        </div>
-    </div>
-
-    <!-- Модалка входа для сотрудников -->
-    <div id="staffLoginModal" class="modal">
-        <div class="modal-content">
-            <span class="close-staff">&times;</span>
-            <h2>Вход для сотрудников</h2>
-            <form>
-                <label>Логин (сотрудник)</label>
-                <input type="text" required>
-                <label>Пароль</label>
-                <input type="password" required>
-                <button type="submit">Войти в систему</button>
             </form>
         </div>
     </div>
