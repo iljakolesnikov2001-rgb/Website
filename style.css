@@ -235,3 +235,33 @@ form input {
     .top-nav li { margin: 0 1rem; }
     .top-nav a  { font-size: 1.1rem; }
 }
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff6200;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: background 0.3s;
+}
+
+.theme-btn:hover { background: #e55a00; }
+
+/* Для модалки контактов — такой же стиль */
+.close-contacts {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 42px;
+    cursor: pointer;
+    color: #777;
+}
+
+.close-contacts:hover { color: #ff6200; }
