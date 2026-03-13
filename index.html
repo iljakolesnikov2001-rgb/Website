@@ -3,70 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свитранс — Международные и местные перевозки грузов</title>
+    <title>Ваша Логистика в Латвии</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Свитранс</h1>
-            <p>Надёжные грузоперевозки по Латвии, Европе и СНГ</p>
-            <button id="contactBtn" class="btn-open">Оставить заявку <i class="fas fa-arrow-right"></i></button>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="services">
-            <h2>Наши услуги</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-truck fa-3x"></i>
-                    <h3>Автоперевозки</h3>
-                    <p>Полные и сборные грузы, рефрижераторы, негабарит</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-ship fa-3x"></i>
-                    <h3>Морские и ж/д</h3>
-                    <p>Контейнеры, вагоны, мультимодальные схемы</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-warehouse fa-3x"></i>
-                    <h3>Склад и логистика</h3>
-                    <p>Хранение, комплектация, таможенное оформление</p>
-                </div>
-            </div>
-        </section>
+<header>
+    <h1>Надёжные автоперевозки по Европе из Латвии</h1>
+</header>
 
-        <section class="why-us">
-            <h2>Почему выбирают Свитранс</h2>
-            <ul>
-                <li>Собственный автопарк и партнёры по всей Европе</li>
-                <li>Гарантия сроков и сохранности груза</li>
-                <li>Круглосуточная поддержка 24/7</li>
-                <li>Прозрачные цены без скрытых доплат</li>
-            </ul>
-        </section>
-    </main>
+<nav>
+    <button id="openModalBtn">Получить расчёт за 5 минут</button>
+</nav>
 
-    <!-- Правая выдвигающаяся панель -->
-    <div id="sidePanel" class="side-panel">
-        <button class="btn-close">&times;</button>
-        <h2>Оставить заявку</h2>
-        <table class="info-table">
-            <tr><th>Телефон:</th><td>+371 2000 0000</td></tr>
-            <tr><th>Email:</th><td>info@svitrans.lv</td></tr>
-            <tr><th>Адрес:</th><td>Рига, ул. Бривибас 123</td></tr>
-            <tr><th>Время работы:</th><td>24/7</td></tr>
-        </table>
-        <form>
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="tel" placeholder="Телефон" required>
-            <textarea placeholder="Опишите груз и маршрут" rows="4"></textarea>
-            <button type="submit" class="btn-submit">Отправить</button>
+<main>
+    <h2>Наши услуги</h2>
+    <p>• Полные машины (FTL) и сборные грузы (LTL)<br>
+    • Экспресс-доставка по ЕС и Латвии<br>
+    • Склад в Риге: хранение, комплектация<br>
+    • Таможенное оформление<br>
+    • Доставка опасных грузов (ADR)</p>
+
+    <h2>Популярные направления</h2>
+    <p>Латвия → Германия, Польша, Швеция, Финляндия, Литва, Эстония<br>
+    Импорт в Латвию из любой точки ЕС</p>
+</main>
+
+<footer>
+    <p>© 2026 Ваша Логистика в Латвии. Рига.</p>
+</footer>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Заявка на перевозку</h2>
+        <form action="#" method="post"> <!-- потом подключишь Formspree или другой обработчик -->
+            <label>Название компании / ФИО *</label>
+            <input type="text" required>
+
+            <label>Что за груз? (описание, тип) *</label>
+            <textarea rows="3" required></textarea>
+
+            <label>Количество: паллетных мест / кг *</label>
+            <input type="text" placeholder="Напр. 12 паллет / 8500 кг" required>
+
+            <label>Откуда → Куда</label>
+            <input type="text" placeholder="Рига → Берлин">
+
+            <label>Ваш телефон / Email *</label>
+            <input type="text" required>
+
+            <button type="submit">Отправить заявку</button>
         </form>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
