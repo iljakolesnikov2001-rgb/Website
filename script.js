@@ -1,4 +1,4 @@
-// Переключение темы
+// Тема
 const toggleBtn = document.getElementById('themeToggle');
 const body = document.body;
 
@@ -6,28 +6,42 @@ toggleBtn.onclick = () => {
     if (body.classList.contains('dark')) {
         body.classList.remove('dark');
         body.classList.add('light');
-        toggleBtn.textContent = '🌙 Тёмная тема';
+        toggleBtn.textContent = '🌙';
         localStorage.setItem('theme', 'light');
     } else {
         body.classList.remove('light');
         body.classList.add('dark');
-        toggleBtn.textContent = '☀️ Светлая тема';
+        toggleBtn.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
     }
 };
 
-// Загрузка сохранённой темы
 const savedTheme = localStorage.getItem('theme') || 'light';
 body.classList.add(savedTheme);
-toggleBtn.textContent = savedTheme === 'dark' ? '☀️ Светлая тема' : '🌙 Тёмная тема';
+toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
-// Модальное окно расчёта
-const modal = document.getElementById('calcModal');
+// Модалка расчёта
+const calcModal = document.getElementById('calcModal');
 const calcBtn = document.getElementById('calcBtn');
-const close = document.querySelector('.close');
+const closeCalc = document.querySelector('#calcModal .close');
 
-calcBtn.onclick = () => modal.style.display = 'flex';
-close.onclick = () => modal.style.display = 'none';
+calcBtn.onclick = () => calcModal.style.display = 'flex';
+closeCalc.onclick = () => calcModal.style.display = 'none';
+
+// Модалка контактов
+const contactsModal = document.getElementById('contactsModal');
+const contactsLink = document.getElementById('contactsLink');
+const closeContacts = document.querySelector('.close-contacts');
+
+contactsLink.onclick = (e) => {
+    e.preventDefault();
+    contactsModal.style.display = 'flex';
+};
+closeContacts.onclick = () => contactsModal.style.display = 'none';
+
+// Закрытие по клику вне модалок
 window.onclick = (e) => {
-    if (e.target === modal) modal.style.display = 'none';
+    if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+    }
 };
