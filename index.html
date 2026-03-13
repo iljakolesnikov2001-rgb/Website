@@ -9,22 +9,22 @@
 <body>
 
 <header class="hero">
+    <nav class="top-nav">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Автопарк</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
     <div class="hero-content">
         <h1>СВИТТРАНС</h1>
         <p>Международные и внутренние Cargo-перевозки</p>
         <button id="calcBtn" class="cta-btn">Получить расчёт</button>
     </div>
 </header>
-
-<nav class="top-nav">
-    <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О компании</a></li>
-        <li><a href="#">Услуги</a></li>
-        <li><a href="#">Автопарк</a></li>
-        <li><a href="#">Контакты</a></li>
-    </ul>
-</nav>
 
 <main>
     <section class="features">
@@ -63,21 +63,17 @@
 <!-- Модальное окно -->
 <div id="calcModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close">×</span>
         <h2>Заявка на расчёт</h2>
-        <form action="https://formspree.io/f/твой_id" method="POST"> <!-- замени на свой Formspree -->
+        <form action="https://formspree.io/f/твой_id" method="POST">
             <label>Имя / Компания *</label>
             <input type="text" name="name" required>
-
             <label>Телефон / Email *</label>
             <input type="text" name="contact" required>
-
             <label>Откуда → Куда</label>
             <input type="text" name="route">
-
             <label>Груз (паллеты / кг)</label>
             <input type="text" name="cargo">
-
             <button type="submit">Отправить</button>
         </form>
     </div>
