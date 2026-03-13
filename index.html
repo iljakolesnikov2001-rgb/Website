@@ -18,15 +18,16 @@
             <li><a href="#">О компании</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Автопарк</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#" id="contactsLink">Контакты</a></li>
         </ul>
     </nav>
+
+    <button id="themeToggle" class="theme-btn">🌙</button>
 
     <div class="hero-content">
         <h1>СВИТТРАНС</h1>
         <p>Международные и внутренние Cargo-перевозки</p>
         <button id="calcBtn" class="cta-btn">Получить расчёт</button>
-        <button id="themeToggle" class="theme-btn">🌙 Тёмная тема</button>
     </div>
 </header>
 
@@ -34,8 +35,8 @@
     <section class="features">
         <div class="feature">
             <div class="icon">🌍</div>
-            <h3>Международные перевозки</h3>
-            <p>Доставка по Европе, Азии и СНГ</p>
+            <h3>По всей Прибалтике</h3>
+            <p>Доставка по Латвии, Литве, Эстонии</p>
         </div>
         <div class="feature">
             <div class="icon">⏱️</div>
@@ -64,7 +65,7 @@
     <p>© 2026 СВИТТРАНС. Рига, Латвия</p>
 </footer>
 
-<!-- Модальное окно -->
+<!-- Модалка расчёта -->
 <div id="calcModal" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
@@ -80,6 +81,18 @@
             <input type="text" name="cargo">
             <button type="submit">Отправить</button>
         </form>
+    </div>
+</div>
+
+<!-- Модалка контактов -->
+<div id="contactsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-contacts">×</span>
+        <h2>Контакты</h2>
+        <p><strong>Телефон:</strong> +371 20000000</p>
+        <p><strong>Email:</strong> info@svittrans.lv</p>
+        <p><strong>Адрес:</strong> Рига, ул. Бривибас 123</p>
+        <p><strong>WhatsApp:</strong> +371 20000000</p>
     </div>
 </div>
 
