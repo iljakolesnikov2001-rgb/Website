@@ -1,47 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     transition: background 0.4s, color 0.4s;
 }
 
-/* Светлая тема (по умолчанию) */
 body.light {
-    background: #f8f9fa;
-    color: #222;
+    background: #f0f4f8;
+    color: #1a2b3c;
 }
 
-body.light .hero::before { background: rgba(0,0,0,0.4); }
-body.light .top-nav { background: rgba(255,255,255,0.95); }
-body.light .top-nav a { color: #222; }
-body.light .top-nav a:hover { color: #ff6200; }
-body.light footer { background: #eee; color: #333; }
-body.light .modal-content { background: white; color: #222; }
-body.light form input { background: white; color: #222; border: 1px solid #ccc; }
+body.light .hero::before { background: rgba(26,43,60,0.45); }
+body.light .top-nav { background: rgba(240,244,248,0.95); }
+body.light .top-nav a { color: #1a2b3c; }
+body.light .top-nav a:hover { color: #0066cc; }
+body.light footer { background: #e0e8f0; color: #1a2b3c; }
 
-/* Тёмная тема */
 body.dark {
-    background: #111;
-    color: white;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-body.dark .hero::before { background: rgba(0,0,0,0.65); }
-body.dark .top-nav { background: rgba(0,0,0,0.7); }
-body.dark .modal-content { background: #1a1a1a; color: white; }
-body.dark form input { background: #222; color: white; border: 1px solid #444; }
+body.dark .hero::before { background: rgba(15,23,42,0.75); }
+body.dark .top-nav { background: rgba(15,23,42,0.9); }
+body.dark .top-nav a { color: #e2e8f0; }
+body.dark .top-nav a:hover { color: #60a5fa; }
+body.dark footer { background: #020617; color: #cbd5e1; }
 
-/* Шрифты для заголовков */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
 
-/* Hero */
 .hero {
     position: relative;
     height: 80vh;
@@ -62,25 +50,31 @@ h1, h2, h3 {
     width: 100%;
     padding: 1.2rem 0;
     z-index: 10;
-    backdrop-filter: blur(4px);
 }
 
-.top-nav ul {
-    list-style: none;
-    text-align: center;
+.top-nav ul { list-style: none; text-align: center; }
+
+.top-nav li { display: inline-block; margin: 0 1.8rem; }
+
+.top-nav a { text-decoration: none; font-size: 1.25rem; font-weight: 500; transition: color 0.3s; }
+
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,102,204,0.8);
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.top-nav li {
-    display: inline-block;
-    margin: 0 1.8rem;
-}
-
-.top-nav a {
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+.theme-btn:hover { background: #0066cc; }
 
 .hero-content {
     position: relative;
@@ -93,36 +87,24 @@ h1, h2, h3 {
     font-size: 5.5rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 10px;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    letter-spacing: 8px;
 }
 
-.hero p {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    opacity: 0.95;
-}
+.hero p { font-size: 2rem; margin-bottom: 3rem; }
 
-.cta-btn, .theme-btn {
-    background: #ff6200;
+.cta-btn {
+    background: #0066cc;
     color: white;
     border: none;
-    padding: 14px 36px;
+    padding: 14px 40px;
     font-size: 1.3rem;
     border-radius: 8px;
     cursor: pointer;
-    margin: 0 10px 20px;
-    transition: background 0.3s;
 }
 
-.cta-btn:hover, .theme-btn:hover {
-    background: #e55a00;
-}
+.cta-btn:hover { background: #0055aa; }
 
-/* Основной контент */
-main {
-    padding: 4rem 2rem;
-}
+main { padding: 4rem 2rem; }
 
 .features {
     display: flex;
@@ -132,58 +114,32 @@ main {
     margin-bottom: 6rem;
 }
 
-.feature {
-    text-align: center;
-    max-width: 320px;
-}
+.feature { text-align: center; max-width: 320px; }
 
-.icon {
-    font-size: 5rem;
-    margin-bottom: 1.2rem;
-}
+.icon { font-size: 5rem; margin-bottom: 1.2rem; }
 
-.feature h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    color: #ff6200;
-}
+.feature h3 { font-size: 1.8rem; margin-bottom: 0.8rem; color: #0066cc; }
 
-/* Автопарк */
-.fleet {
-    text-align: center;
-}
+.fleet { text-align: center; }
 
-.fleet h2 {
-    font-size: 2.8rem;
-    margin-bottom: 2.5rem;
-    color: #ff6200;
-}
+.fleet h2 { font-size: 2.8rem; margin-bottom: 2.5rem; color: #0066cc; }
 
-.fleet-images {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
+.fleet-images { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
 
 .fleet-images img {
     width: 320px;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
-/* Футер */
 footer {
     text-align: center;
     padding: 2.5rem 1rem;
     font-size: 1.1rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid #334155;
 }
 
-/* Модалка */
 .modal {
     display: none;
     position: fixed;
@@ -203,22 +159,18 @@ footer {
     box-shadow: 0 10px 40px rgba(0,0,0,0.7);
 }
 
-.close {
+.close, .close-contacts {
     position: absolute;
     right: 20px;
     top: 10px;
     font-size: 42px;
     cursor: pointer;
-    color: #777;
+    color: #94a3b8;
 }
 
-.close:hover { color: #ff6200; }
+.close:hover, .close-contacts:hover { color: #60a5fa; }
 
-form label {
-    display: block;
-    margin: 1.2rem 0 0.5rem;
-    font-weight: bold;
-}
+form label { display: block; margin: 1.2rem 0 0.5rem; font-weight: bold; }
 
 form input {
     width: 100%;
@@ -226,42 +178,10 @@ form input {
     margin-bottom: 1rem;
     border-radius: 6px;
     font-size: 1rem;
+    border: 1px solid #475569;
 }
 
-/* Адаптив */
 @media (max-width: 768px) {
     .hero h1 { font-size: 3.8rem; }
-    .hero p   { font-size: 1.6rem; }
-    .top-nav li { margin: 0 1rem; }
-    .top-nav a  { font-size: 1.1rem; }
+    .hero p { font-size: 1.6rem; }
 }
-.theme-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ff6200;
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.6rem;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: background 0.3s;
-}
-
-.theme-btn:hover { background: #e55a00; }
-
-/* Для модалки контактов — такой же стиль */
-.close-contacts {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 42px;
-    cursor: pointer;
-    color: #777;
-}
-
-.close-contacts:hover { color: #ff6200; }
