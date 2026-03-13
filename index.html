@@ -3,18 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Тестовый Сайт</title>
+    <title>Свитранс — Международные и местные перевозки грузов</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Добро пожаловать!</h1>
+        <div class="container">
+            <h1>Свитранс</h1>
+            <p>Надёжные грузоперевозки по Латвии, Европе и СНГ</p>
+            <button id="contactBtn" class="btn-open">Оставить заявку <i class="fas fa-arrow-right"></i></button>
+        </div>
     </header>
-    <main>
-        <p>Это базовый шаблон. Добавь свой контент здесь.</p>
+
+    <main class="container">
+        <section class="services">
+            <h2>Наши услуги</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-truck fa-3x"></i>
+                    <h3>Автоперевозки</h3>
+                    <p>Полные и сборные грузы, рефрижераторы, негабарит</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-ship fa-3x"></i>
+                    <h3>Морские и ж/д</h3>
+                    <p>Контейнеры, вагоны, мультимодальные схемы</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-warehouse fa-3x"></i>
+                    <h3>Склад и логистика</h3>
+                    <p>Хранение, комплектация, таможенное оформление</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <h2>Почему выбирают Свитранс</h2>
+            <ul>
+                <li>Собственный автопарк и партнёры по всей Европе</li>
+                <li>Гарантия сроков и сохранности груза</li>
+                <li>Круглосуточная поддержка 24/7</li>
+                <li>Прозрачные цены без скрытых доплат</li>
+            </ul>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2026. Все права защищены.</p>
-    </footer>
+
+    <!-- Правая выдвигающаяся панель -->
+    <div id="sidePanel" class="side-panel">
+        <button class="btn-close">&times;</button>
+        <h2>Оставить заявку</h2>
+        <table class="info-table">
+            <tr><th>Телефон:</th><td>+371 2000 0000</td></tr>
+            <tr><th>Email:</th><td>info@svitrans.lv</td></tr>
+            <tr><th>Адрес:</th><td>Рига, ул. Бривибас 123</td></tr>
+            <tr><th>Время работы:</th><td>24/7</td></tr>
+        </table>
+        <form>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <textarea placeholder="Опишите груз и маршрут" rows="4"></textarea>
+            <button type="submit" class="btn-submit">Отправить</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
