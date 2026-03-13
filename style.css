@@ -1,170 +1,119 @@
-* { margin:0; padding:0; box-sizing:border-box; }
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background:#f8f9fa;
-    color:#333;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+    background: #111;
+    color: white;
 }
 
-.hamburger {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 2000;
-    width: 50px;
-    height: 50px;
-    background: #004080;
-    border-radius: 50%;
+.hero {
+    background: url('https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+    height: 80vh;
+    min-height: 500px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-}
-
-.hamburger svg { stroke: white; }
-
-.drawer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #004080;
-    color: white;
-    overflow: hidden;
-    transition: width 0.35s ease;
-    z-index: 1500;
-}
-
-.drawer ul {
-    list-style: none;
-    padding: 80px 20px 20px;
-}
-
-.drawer a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block;
-    padding: 12px 0;
-}
-
-.drawer a:hover { color: #ff6200; }
-
-.close-drawer {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 42px;
-    cursor: pointer;
-    color: white;
-}
-
-header {
-    background: #004080;
-    color: white;
     text-align: center;
-    padding: 60px 20px 40px;
 }
 
-header h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
-header p  { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
 
-header button {
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin: 1rem 0 2rem;
+}
+
+.cta-btn {
     background: #ff6200;
     color: white;
     border: none;
-    padding: 14px 32px;
-    font-size: 1.3rem;
-    border-radius: 8px;
+    padding: 16px 40px;
+    font-size: 1.4rem;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-header button:hover { background: #e55a00; }
-
-main {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
+.top-nav {
+    background: #222;
+    padding: 1rem;
+    text-align: center;
 }
 
-h2 { color: #004080; margin: 0 0 1.2rem; font-size: 2rem; }
-
-.services li {
-    font-size: 1.15rem;
-    margin: 0.9rem 0;
-    padding-left: 2rem;
-    position: relative;
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.services li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: #ff6200;
-    font-size: 1.4rem;
+.top-nav li {
+    display: inline-block;
+    margin: 0 1.5rem;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.top-nav a:hover { color: #ff6200; }
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    background: #1a1a1a;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.icon { font-size: 4rem; margin-bottom: 1rem; }
+
+.fleet {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.fleet h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+
+.fleet-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.fleet-images img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 footer {
-    background: #333;
-    color: white;
+    background: #000;
     text-align: center;
-    padding: 20px;
-    margin-top: auto;
-}
-
-/* Модалка */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    width: 90%;
-    max-width: 460px;
-    padding: 30px;
-    border-radius: 12px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 36px;
-    cursor: pointer;
-    color: #777;
-}
-
-.close:hover { color: #ff6200; }
-
-form label { display:block; margin:1.2rem 0 0.5rem; font-weight:bold; }
-form input, form textarea {
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:1rem;
-}
-form button {
-    width:100%;
-    margin-top:1.8rem;
-    padding:14px;
-    background:#004080;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:1.2rem;
-    cursor:pointer;
+    padding: 2rem;
+    font-size: 1.1rem;
 }
