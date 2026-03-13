@@ -9,6 +9,59 @@ body {
     flex-direction: column;
 }
 
+.hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 1100;
+    color: #004080;
+}
+
+.drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    background: #004080;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+}
+
+.drawer h3 {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.drawer ul {
+    list-style: none;
+}
+
+.drawer li {
+    padding: 1rem 1.5rem;
+}
+
+.drawer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.drawer a:hover { color: #ff6200; }
+
+.close-drawer {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
 header {
     background: #004080;
     color: white;
@@ -33,7 +86,6 @@ nav button {
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 6px;
-    transition: background 0.3s;
 }
 
 nav button:hover { background: #e55a00; }
@@ -60,7 +112,7 @@ footer {
     margin-top: auto;
 }
 
-/* Модалка */
+/* Модалки */
 .modal {
     display: none;
     position: fixed;
@@ -81,7 +133,7 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.close {
+.close, .close-client, .close-staff {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
@@ -90,7 +142,7 @@ footer {
     color: #aaa;
 }
 
-.close:hover { color: #ff6200; }
+.close:hover, .close-client:hover, .close-staff:hover { color: #ff6200; }
 
 form label { display: block; margin: 1rem 0 0.4rem; font-weight: bold; }
 form input, form textarea {
