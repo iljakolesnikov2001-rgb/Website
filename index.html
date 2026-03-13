@@ -7,58 +7,82 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>СВИТТРАНС</h1>
-            <p>Международные и внутренние Cargo-перевозки</p>
-            <button class="cta-btn">Получить расчёт</button>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1>СВИТТРАНС</h1>
+        <p>Международные и внутренние Cargo-перевозки</p>
+        <button id="calcBtn" class="cta-btn">Получить расчёт</button>
+    </div>
+</header>
+
+<nav class="top-nav">
+    <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Автопарк</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="features">
+        <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>Международные перевозки</h3>
+            <p>Доставка по Европе, Азии и СНГ</p>
         </div>
-    </header>
+        <div class="feature">
+            <div class="icon">⏱️</div>
+            <h3>Срочная доставка</h3>
+            <p>Гарантированные сроки</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🛡️</div>
+            <h3>Страхование груза</h3>
+            <p>Полная защита ваших товаров</p>
+        </div>
+    </section>
 
-    <nav class="top-nav">
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Автопарк</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
+    <section class="fleet">
+        <h2>Наш автопарк</h2>
+        <div class="fleet-images">
+            <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
+            <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
+        </div>
+        <p>Современные MAN Trucks с рефрижераторными контейнерами</p>
+    </section>
+</main>
 
-    <main>
-        <section class="features">
-            <div class="feature">
-                <div class="icon">🌍</div>
-                <h3>Международные перевозки</h3>
-                <p>Доставка по Европе, Азии и СНГ</p>
-            </div>
-            <div class="feature">
-                <div class="icon">⏱️</div>
-                <h3>Срочная доставка</h3>
-                <p>Гарантированные сроки</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🛡️</div>
-                <h3>Страхование груза</h3>
-                <p>Полная защита ваших товаров</p>
-            </div>
-        </section>
+<footer>
+    <p>Тел: +371 12345678 | Email: info@svittrans.lv</p>
+    <p>© 2026 СВИТТРАНС. Рига, Латвия</p>
+</footer>
 
-        <section class="fleet">
-            <h2>Наш автопарк</h2>
-            <div class="fleet-images">
-                <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
-                <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
-            </div>
-            <p>Современные MAN Trucks с рефрижераторными контейнерами</p>
-        </section>
-    </main>
+<!-- Модальное окно -->
+<div id="calcModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Заявка на расчёт</h2>
+        <form action="https://formspree.io/f/твой_id" method="POST"> <!-- замени на свой Formspree -->
+            <label>Имя / Компания *</label>
+            <input type="text" name="name" required>
 
-    <footer>
-        <p>Тел: +371 12345678 | Email: info@svittrans.lv</p>
-        <p>© 2026 СВИТТРАНС. Рига, Латвия</p>
-    </footer>
+            <label>Телефон / Email *</label>
+            <input type="text" name="contact" required>
 
-    <script src="script.js"></script>
+            <label>Откуда → Куда</label>
+            <input type="text" name="route">
+
+            <label>Груз (паллеты / кг)</label>
+            <input type="text" name="cargo">
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
