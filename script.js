@@ -1,4 +1,3 @@
-// Тема
 const toggleBtn = document.getElementById('themeToggle');
 const body = document.body;
 
@@ -39,9 +38,6 @@ contactsLink.onclick = (e) => {
 };
 closeContacts.onclick = () => contactsModal.style.display = 'none';
 
-// Закрытие по клику вне модалок
 window.onclick = (e) => {
-    if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-    }
+    if (e.target.classList.contains('modal')) e.target.style.display = 'none';
 };
