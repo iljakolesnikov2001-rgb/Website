@@ -4,23 +4,16 @@ const body = document.body;
 
 if (toggleBtn) {
     toggleBtn.onclick = () => {
-        if (body.classList.contains('dark')) {
-            body.classList.remove('dark');
-            body.classList.add('light');
-            toggleBtn.textContent = '🌙';
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.classList.remove('light');
-            body.classList.add('dark');
-            toggleBtn.textContent = '☀️';
-            localStorage.setItem('theme', 'dark');
-        }
+        body.classList.toggle('dark');
+        body.classList.toggle('light');
+        toggleBtn.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+        localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
     };
 }
 
-const savedTheme = localStorage.getItem('theme') || 'light';
-body.classList.add(savedTheme);
-if (toggleBtn) toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+const saved = localStorage.getItem('theme') || 'light';
+body.classList.add(saved);
+if (toggleBtn) toggleBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
 
 // Модалка расчёта
 const calcModal = document.getElementById('calcModal');
