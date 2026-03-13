@@ -5,13 +5,43 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
+    transition: background 0.4s, color 0.4s;
 }
 
-/* Hero + фон */
+/* Светлая тема (по умолчанию) */
+body.light {
+    background: #f8f9fa;
+    color: #222;
+}
+
+body.light .hero::before { background: rgba(0,0,0,0.4); }
+body.light .top-nav { background: rgba(255,255,255,0.95); }
+body.light .top-nav a { color: #222; }
+body.light .top-nav a:hover { color: #ff6200; }
+body.light footer { background: #eee; color: #333; }
+body.light .modal-content { background: white; color: #222; }
+body.light form input { background: white; color: #222; border: 1px solid #ccc; }
+
+/* Тёмная тема */
+body.dark {
+    background: #111;
+    color: white;
+}
+
+body.dark .hero::before { background: rgba(0,0,0,0.65); }
+body.dark .top-nav { background: rgba(0,0,0,0.7); }
+body.dark .modal-content { background: #1a1a1a; color: white; }
+body.dark form input { background: #222; color: white; border: 1px solid #444; }
+
+/* Шрифты для заголовков */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Hero */
 .hero {
     position: relative;
     height: 80vh;
@@ -23,16 +53,13 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
 }
 
-/* Навигация сверху */
 .top-nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
     padding: 1.2rem 0;
     z-index: 10;
     backdrop-filter: blur(4px);
@@ -49,18 +76,12 @@ body {
 }
 
 .top-nav a {
-    color: white;
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.top-nav a:hover {
-    color: #ff6200;
-}
-
-/* Контент героя */
 .hero-content {
     position: relative;
     z-index: 1;
@@ -82,18 +103,19 @@ body {
     opacity: 0.95;
 }
 
-.cta-btn {
+.cta-btn, .theme-btn {
     background: #ff6200;
     color: white;
     border: none;
-    padding: 16px 48px;
-    font-size: 1.4rem;
+    padding: 14px 36px;
+    font-size: 1.3rem;
     border-radius: 8px;
     cursor: pointer;
+    margin: 0 10px 20px;
     transition: background 0.3s;
 }
 
-.cta-btn:hover {
+.cta-btn:hover, .theme-btn:hover {
     background: #e55a00;
 }
 
@@ -153,21 +175,15 @@ main {
     box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
-.fleet p {
-    font-size: 1.4rem;
-    opacity: 0.9;
-}
-
 /* Футер */
 footer {
-    background: #000;
     text-align: center;
     padding: 2.5rem 1rem;
     font-size: 1.1rem;
     border-top: 1px solid #333;
 }
 
-/* Модальное окно */
+/* Модалка */
 .modal {
     display: none;
     position: fixed;
@@ -179,8 +195,6 @@ footer {
 }
 
 .modal-content {
-    background: #1a1a1a;
-    color: white;
     width: 90%;
     max-width: 480px;
     padding: 2.5rem;
@@ -198,42 +212,20 @@ footer {
     color: #777;
 }
 
-.close:hover {
-    color: #ff6200;
-}
+.close:hover { color: #ff6200; }
 
 form label {
     display: block;
     margin: 1.2rem 0 0.5rem;
     font-weight: bold;
-    font-size: 1.1rem;
 }
 
 form input {
     width: 100%;
     padding: 12px;
     margin-bottom: 1rem;
-    border: 1px solid #444;
     border-radius: 6px;
-    background: #222;
-    color: white;
     font-size: 1rem;
-}
-
-form button {
-    width: 100%;
-    padding: 14px;
-    background: #ff6200;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    margin-top: 1.5rem;
-}
-
-form button:hover {
-    background: #e55a00;
 }
 
 /* Адаптив */
@@ -242,5 +234,4 @@ form button:hover {
     .hero p   { font-size: 1.6rem; }
     .top-nav li { margin: 0 1rem; }
     .top-nav a  { font-size: 1.1rem; }
-    .features   { gap: 2rem; }
 }
