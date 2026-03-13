@@ -7,58 +7,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Надёжные автоперевозки по Европе</h1>
+        <p>Из Латвии — быстро, безопасно, выгодно</p>
+    </header>
 
-<header>
-    <h1>Надёжные автоперевозки по Европе из Латвии</h1>
-</header>
+    <nav>
+        <button id="openModalBtn">Получить расчёт за 5 минут</button>
+    </nav>
 
-<nav>
-    <button id="openModalBtn">Получить расчёт за 5 минут</button>
-</nav>
+    <main>
+        <section>
+            <h2>Наши услуги</h2>
+            <ul>
+                <li>Полные машины (FTL) и сборные грузы (LTL)</li>
+                <li>Экспресс-доставка по ЕС и Латвии</li>
+                <li>Склад в Риге: хранение, комплектация, кросс-докинг</li>
+                <li>Таможенное оформление</li>
+                <li>Доставка опасных грузов (ADR)</li>
+            </ul>
+        </section>
 
-<main>
-    <h2>Наши услуги</h2>
-    <p>• Полные машины (FTL) и сборные грузы (LTL)<br>
-    • Экспресс-доставка по ЕС и Латвии<br>
-    • Склад в Риге: хранение, комплектация<br>
-    • Таможенное оформление<br>
-    • Доставка опасных грузов (ADR)</p>
+        <section>
+            <h2>Популярные направления</h2>
+            <p>Латвия → Германия, Польша, Швеция, Финляндия, Литва, Эстония<br>
+            Импорт в Латвию из любой точки ЕС</p>
+        </section>
+    </main>
 
-    <h2>Популярные направления</h2>
-    <p>Латвия → Германия, Польша, Швеция, Финляндия, Литва, Эстония<br>
-    Импорт в Латвию из любой точки ЕС</p>
-</main>
+    <footer>
+        <p>© 2026 Ваша Логистика в Латвии. Рига.</p>
+    </footer>
 
-<!-- Модальное окно -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Заявка на перевозку</h2>
-        <form action="#" method="post">
-            <label>Название компании / ФИО *</label>
-            <input type="text" required>
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Заявка на перевозку</h2>
+            <form action="#" method="post">
+                <label>Компания / ФИО *</label>
+                <input type="text" required>
 
-            <label>Что за груз? (описание, тип) *</label>
-            <textarea rows="3" required></textarea>
+                <label>Груз (тип, описание) *</label>
+                <textarea rows="3" required></textarea>
 
-            <label>Количество: паллетных мест / кг *</label>
-            <input type="text" placeholder="Напр. 12 паллет / 8500 кг" required>
+                <label>Паллеты / кг *</label>
+                <input type="text" placeholder="Напр. 12 паллет / 8500 кг" required>
 
-            <label>Откуда → Куда</label>
-            <input type="text" placeholder="Рига → Берлин">
+                <label>Откуда → Куда</label>
+                <input type="text" placeholder="Рига → Берлин">
 
-            <label>Ваш телефон / Email *</label>
-            <input type="text" required>
+                <label>Телефон / Email *</label>
+                <input type="text" required>
 
-            <button type="submit">Отправить заявку</button>
-        </form>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<footer>
-    <p>© 2026 Ваша Логистика в Латвии. Рига.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
