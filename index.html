@@ -3,80 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamo Logistics</title>
+    <title>СВИТТРАНС</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hamburger" id="hamburger">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-    </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>СВИТТРАНС</h1>
+            <p>Международные и внутренние Cargo-перевозки</p>
+            <button class="cta-btn">Получить расчёт</button>
+        </div>
+    </header>
 
-    <div class="drawer" id="drawer">
-        <span class="close-drawer" id="closeDrawer">&times;</span>
+    <nav class="top-nav">
         <ul>
             <li><a href="#">Главная</a></li>
             <li><a href="#">О компании</a></li>
             <li><a href="#">Услуги</a></li>
-            <li><a href="#">Направления</a></li>
+            <li><a href="#">Автопарк</a></li>
             <li><a href="#">Контакты</a></li>
-            <li><a href="#" id="clientLoginBtn">Вход для заказчиков</a></li>
-            <li><a href="#" id="staffLoginBtn">Вход для сотрудников</a></li>
         </ul>
-    </div>
-
-    <header>
-        <h1>Надёжные автоперевозки по Европе</h1>
-        <p>Из Латвии — быстро, безопасно, выгодно</p>
-        <button id="openModalBtn">Получить расчёт за 5 минут</button>
-    </header>
+    </nav>
 
     <main>
-        <section>
-            <h2>Наши услуги</h2>
-            <ul class="services">
-                <li>Полные машины (FTL) и сборные грузы (LTL)</li>
-                <li>Экспресс-доставка по ЕС и Латвии</li>
-                <li>Склад в Риге: хранение, комплектация, кросс-докинг</li>
-                <li>Таможенное оформление</li>
-                <li>Доставка опасных грузов (ADR)</li>
-            </ul>
+        <section class="features">
+            <div class="feature">
+                <div class="icon">🌍</div>
+                <h3>Международные перевозки</h3>
+                <p>Доставка по Европе, Азии и СНГ</p>
+            </div>
+            <div class="feature">
+                <div class="icon">⏱️</div>
+                <h3>Срочная доставка</h3>
+                <p>Гарантированные сроки</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🛡️</div>
+                <h3>Страхование груза</h3>
+                <p>Полная защита ваших товаров</p>
+            </div>
         </section>
 
-        <section>
-            <h2>Популярные направления</h2>
-            <p>Латвия → Германия, Польша, Швеция, Финляндия, Литва, Эстония<br>
-            Импорт в Латвию из любой точки ЕС</p>
+        <section class="fleet">
+            <h2>Наш автопарк</h2>
+            <div class="fleet-images">
+                <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
+                <img src="https://images.unsplash.com/photo-1601581875039-e8d2d7b5a0a8?auto=format&fit=crop&q=80" alt="Грузовики">
+            </div>
+            <p>Современные MAN Trucks с рефрижераторными контейнерами</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Svitrans. Рига, Латвия</p>
+        <p>Тел: +371 12345678 | Email: info@svittrans.lv</p>
+        <p>© 2026 СВИТТРАНС. Рига, Латвия</p>
     </footer>
-
-    <!-- Модалка заявки -->
-    <div id="calcModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Заявка на перевозку</h2>
-            <form>
-                <label>Компания / ФИО *</label>
-                <input type="text" required>
-                <label>Груз (тип, описание) *</label>
-                <textarea rows="3" required></textarea>
-                <label>Паллеты / кг *</label>
-                <input type="text" placeholder="12 паллет / 8500 кг" required>
-                <label>Откуда → Куда</label>
-                <input type="text" placeholder="Рига → Берлин">
-                <label>Телефон / Email *</label>
-                <input type="text" required>
-                <button type="submit">Отправить</button>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
