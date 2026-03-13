@@ -1,26 +1,17 @@
-const panel = document.getElementById('sidePanel');
-const openBtn = document.getElementById('contactBtn');
-const closeBtn = document.querySelector('.btn-close');
+// Открытие модалки
+document.getElementById('openModalBtn').onclick = function() {
+    document.getElementById('myModal').style.display = 'block';
+};
 
-openBtn.addEventListener('click', () => panel.classList.add('active'));
-closeBtn.addEventListener('click', () => panel.classList.remove('active'));
+// Закрытие по крестику
+document.querySelector('.close').onclick = function() {
+    document.getElementById('myModal').style.display = 'none';
+};
 
-// Закрытие по клику вне панели
-document.addEventListener('click', e => {
-    if (!panel.contains(e.target) && !openBtn.contains(e.target)) {
-        panel.classList.remove('active');
+// Закрытие по клику вне окна
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
     }
-});
-
-// Простой свайп вправо для открытия (на мобильных)
-let touchStartX = 0;
-document.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', e => {
-    const touchEndX = e.changedTouches[0].screenX;
-    if (touchEndX - touchStartX > 80 && window.innerWidth < 768) {
-        panel.classList.add('active');
-    }
-});
+};
